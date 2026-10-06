@@ -1,0 +1,23 @@
+{block content}
+
+<h1>Welcome to Nette Framework!</h1>
+
+{* generate random number *}
+{var $randomNumber = rand(1, 100)}
+<p>Your random number is: {$randomNumber}</p>
+
+teď se generuje po zmáčknutí F5 nové číslo
+
+2) verze s AJAXem
+nyní generování náhodného čísla zabalíme do snippetu (část stránky, která se má překreslovat) a vytvoříme odkaz, který bude volat handle metodu:
+
+{snippet pleaseReload}
+
+{* generate random number *}
+{var $randomNumber = rand(1, 100)}
+<p>Your random number is: {$randomNumber}</p>
+{/snippet}
+
+<a n:href="generateRandomNumber!" class="ajax">Generuj Ajaxově!</a>
+
+{/block}
